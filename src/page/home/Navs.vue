@@ -1,0 +1,151 @@
+<template>
+    <ul class="Hnav">
+        <li v-for="(item,idx) in list" :key="idx" @click="goto(item.name,item.id)">
+            <span :class="item.color"><img :src="item.imgurl" alt=""></span>
+            <p>{{item.text}}</p>
+        </li>
+    </ul>
+</template>
+
+<script>
+export default {
+    data(){
+        return {
+            list:[
+                {
+                    text:'纸片区域',
+                    imgurl:"http://m.ggrsc.com/images/icon/Paper.png",
+                    color:'Hnav-color1',
+                    name:'/product_list',
+                    id:826,
+                },
+                {
+                    text:'PVC区域',
+                    imgurl:'http://m.ggrsc.com/images/icon/pvc.png',
+                    color:'Hnav-color2',
+                    name:'/product_list',
+                    id:827,
+                },
+                {
+                    text:'包装区域',
+                    imgurl:'http://m.ggrsc.com/images/icon/packing.png',
+                    color:'Hnav-color3',
+                    name:'/product_list',
+                    id:1153,
+                },
+                {
+                    text:'个性印刷',
+                    imgurl:'http://m.ggrsc.com/images/icon/printing.png',
+                    color:'Hnav-color4',
+                    name:'/product_list',
+                    id:829
+                },
+                {
+                    text:'会员产品',
+                    imgurl:'http://m.ggrsc.com/images/icon/Penhui.png',
+                    color:'Hnav-color5',
+                    name:'/login',
+                },
+                {
+                    text:'我的商城',
+                    imgurl:'http://m.ggrsc.com/images/icon/mall.png',
+                    color:'Hnav-color6',
+                    name:'/personal',
+                },
+                {
+                    text:'我的订单',
+                    imgurl:'http://m.ggrsc.com/images/icon/order.png',
+                    color:'Hnav-color7'
+                },
+                {
+                    text:'全部分类',
+                    imgurl:'http://m.ggrsc.com/images/icon/catall.png',
+                    color:'Hnav-color8',
+                    name:'/list',
+                },
+                {
+                    text:'购物车',
+                    imgurl:'http://m.ggrsc.com/images/icon/shopping.png',
+                    color:'Hnav-color9',
+                    name:'/Cart',
+                },
+                {
+                    text:'店铺街',
+                    imgurl:'http://m.ggrsc.com/images/icon/street.png',
+                    color:'Hnav-color10'
+                },
+            ]
+        }
+    },
+    methods:{
+        //导航路由跳转
+        goto(rot,id){
+            if(rot){
+                if(id){
+                    this.$router.push({
+                        path:rot,
+                        query:{gc_id:id}
+                    })
+                }else{
+                    this.$router.push({
+                        path:rot
+                    })
+                }
+            }else{
+                alert("这块业务暂时没法提供");
+            }
+        }
+    }
+}
+</script>
+
+<style lang="less" scoped>
+    .Hnav{
+        font-size:16px;
+        display:flex;
+        flex-wrap:wrap;
+        background:#fff;
+        border-bottom:1px #eee solid;
+        padding-bottom:10px;
+        li{
+            width:20%;
+            text-align:center;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            padding-top:10px;
+            cursor:pointer;
+            span{
+                width:45px;
+                height:45px;
+                display:block;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                border-radius:50%;
+                
+                img{
+                    width:50%;
+                    
+                }
+            }
+            p{
+                font-size:12px;
+                color:#555;
+            }
+        }
+        .Hnav-color1{background:#FB6E52;}
+        .Hnav-color2{background:#48CFAE;}
+        .Hnav-color3{background:#4FC0E8;}
+        .Hnav-color4{background:#AC92ED;}
+        .Hnav-color5{background:#ff4c46;}
+        .Hnav-color6{background:#62BA1E;}
+        .Hnav-color7{background:#1A8DE5;}
+        .Hnav-color8{background:#EC87BF;}
+        .Hnav-color9{background:#FDE916;}
+        .Hnav-color10{background:#6130c7;}
+    }
+    
+</style>
+
+

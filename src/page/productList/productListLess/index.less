@@ -1,0 +1,359 @@
+// 默认样式
+.productList {
+    font-size: 16px;
+
+    .main {
+        width: 100%;
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 40px;            
+        overflow: hidden;
+
+        /*排序*/
+        .goods-search-list-nav {
+            position: fixed;
+            z-index: 5;
+            left: 0;
+            right: 0;
+            top: 40px;
+            width: 100%;
+            border-bottom: solid 1px #ececec;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+
+            /*排序title*/
+            ul {
+                width: 335px;
+                height: 40px;
+                display: flex;
+                overflow: hidden;
+                font-size: 13px;
+
+                li {
+                    line-height: 40px;
+                    text-align: center;
+
+                    a {
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        text-decoration: none;
+                        color: #888;
+
+                        i {
+                            font-size: 0px;
+                            line-height: 0;
+                            vertical-align: middle;
+                            display: inline-block;
+                            width: 0px;
+                            height: 0px;
+                            margin-left: 4px;
+                            border-width: 4px;
+                            border-color: #AAA transparent transparent transparent;
+                            border-style: solid dashed dashed dashed;
+                            font-style: normal;
+                        }
+                    }
+                }
+
+                li.current {
+                    a {
+                        color: #ed5564;
+
+                        i {
+                            border-color: #ed5564 transparent transparent transparent;
+                        }
+                    }
+                }
+
+                li:nth-of-type(1) {
+                    width: 40%;
+                }
+
+                li:nth-of-type(2),
+                li:nth-of-type(3) {
+                    width: 30%;
+                }
+            }
+
+            /*改变样式按钮*/
+            .browse-mode {
+                width: 40px;
+                height: 40px;
+                border-left: solid 1px #ececec;
+                
+                img{
+                    margin: 8px;
+                    opacity: 0.5;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            /*排序内容*/
+            #sort_inner {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 40px;
+                z-index: 5;
+                padding-left: 15px;
+                background: #fff;
+                font-size: 13px;
+
+                span {
+                    display: block;
+                    border-top: 1px #eee solid;
+                    width: 100%;
+                    line-height: 40px;
+
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: 40px;
+                        color: #777;
+                        text-decoration: none;
+
+                        i {
+                            display: inline-block;
+                            width: 14px;
+                            height: 14px;
+                            background: url(http://m.ggrsc.com/images/ok.png) no-repeat center;
+                            background-size: 100%;
+                            float: right;
+                            margin: 12px;
+                            display: none;
+                        }
+
+                    }
+
+                    a.cur {
+                        color: #ED5564;
+
+                        i {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        /*产品内容*/
+        .productListGoods {
+            width: 100%;
+            margin-top: 40px;
+            background: #fff;
+            margin-bottom: 50px;
+
+            .goods-secrch-list {
+                width: 100%;
+                overflow: hidden;
+
+                li {
+                    width: 100%;
+                    height: 106px;
+                    border-bottom: 1px #ececec solid;
+                    display: flex;
+                    font-size: 12px;
+                    box-sizing: border-box;
+
+
+                    .goods_pic {
+                        display: block;
+                        width: 106px;
+                        height: 106px;
+                        padding: 8px 5px;
+
+                        img {
+                            width: 92px;
+                            height: 92px;
+                        }
+                    }
+
+                    em {
+                        font-style: normal;
+                    }
+
+                    dl {
+                        display: block;
+                        width: 267px;
+                        height: 92px;
+                        margin-right: 8px;
+                        margin-top: 8px;
+
+                        dt {
+                            display: block;
+                            width: 100%;
+                            height: 28px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+
+                        dd {
+                            width: 100%;
+                            overflow: hidden;
+
+                            h6 {
+                                display: inline-block;
+                                width: 100%;
+                                height: 22px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                color: #999;
+                                font-weight: normal;
+                            }
+
+                            em {
+                                display: inline-block;
+                                width: 100%;
+                                line-height: 15px;
+                                padding: 4px 0;
+                                font-size: 15px;
+                                color: #ec5464;
+                            }
+
+                            p {
+                                color: #999;
+
+                                strong {
+                                    color: #000;
+                                }
+
+                                span {
+                                    float: right;
+                                    color: #ec5464;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 改变样式
+#twoLines {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  li {
+    margin: 4px 0;
+    width: 184px;
+    height: 254px;
+    border: 1px #ececec solid;
+    display: flex;
+    flex-direction: column;
+
+    .goods_pic {
+      display: block;
+      width: 184px;
+      height: 184px;
+      padding: 0;
+      margin-bottom: 2px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    dl {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 0;
+      padding: 0 5px;
+
+      dt {
+        height: 20px;
+        line-height: 20px;
+      }
+
+      dd {
+        h6 {
+          display: none;
+        }
+
+        em {
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+
+.nctouch-norecord {
+  width: 200px;
+  height: 164px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+
+  .norecord-ico {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    margin: 0 auto;
+    background-color: #ddd;
+    border-radius: 100%;
+    padding: 0;
+
+    i {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      margin: 8px;
+      background: url("http://m.ggrsc.com/images/search_w.png") no-repeat center;
+      background-size: 75%;
+    }
+  }
+
+  dl {
+    width: 100%;
+    height: 55px;
+
+    dt {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 18px;
+      color: 111px;
+    }
+    dd {
+      width: 100%;
+      height: 28px;
+      line-height: 30px;
+      font-size: 14px;
+      color: #999;
+    }
+  }
+
+  .btn {
+    display: inline-block !important;
+    height: 22px;
+    padding: 0 6px;
+    font-size: 14px;
+    color: #555 !important;
+    line-height: 20px;
+    text-align: center;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    margin-top: 22px;
+  }
+}
